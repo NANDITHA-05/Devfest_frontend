@@ -1,0 +1,222 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(51, 48, 48);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#loading-gif {
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+
+/* Navbar Styling */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #eaf0ef;
+}
+
+
+
+.logo img {
+    height: 50px; /* Set the desired height */
+    width: 30px; /* Set the desired width */
+    object-fit: contain; /* Prevents distortion */
+}
+
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #00ffcc;
+}
+/* Navbar Link Hover Effect */
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Position the line right below the text */
+    width: 0;
+    height: 2px; /* Thickness of the line */
+    background-color: #00ffcc; /* Color of the underline */
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%; /* Expand the line to full width on hover */
+}
+
+/* Hero Section Styling */
+.hero {
+    height: 100vh;
+    background: linear-gradient(180deg, #02040d 0%, #001a4d 50%, #1a73e8 100%);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Flowy Effect for "DEVS" */
+.hero-content h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: flowyEffect 2s ease forwards;
+}
+
+/* Typewriter Effect for Text */
+.typewriter-text {
+    font-size: 24px;
+    position: relative;
+    display: flex;
+    gap: 10px; /* Space between words */
+    align-items: center;
+}
+
+.word {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.full-text {
+    opacity: 0;
+    transition: opacity 1s ease;
+    position: absolute;
+}
+
+.hero-btn {
+    text-decoration: none;
+    background-color: #00ffcc;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.hero-btn:hover {
+    background-color: #00ccaa;
+}
+
+/* Flowy Animation */
+@keyframes flowyEffect {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+.header__container {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .header__container h1 {
+    position: relative;
+    isolation: isolate;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 5rem;
+    color: var(--secondary-color);
+    font-style: italic;
+    text-align: center;
+  }
+  
+  .header__container h1::before {
+    position: absolute;
+    content: "GROW YOUR STRENGTH";
+    top: -5rem;
+    left: -5rem;
+    font-size: 8rem;
+    font-weight: 800;
+    line-height: 10rem;
+    color: rgba(0, 0, 0, 0.05);
+    z-index: -1;
+  }
+  
+  .characters {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.character {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.character img {
+    width: 200px;
+}
